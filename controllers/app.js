@@ -5,10 +5,10 @@ savorIt.config([
   function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
     $routeProvider
-      // .when("/", {
-      //   templateUrl: "../views/index.html",
-      //   controller: "HomeController",
-      // })
+      .when("/home", {
+        templateUrl: "../views/home.html",
+        controller: "HomeController",
+      })
       .when("/search", {
         templateUrl: "../views/search.html",
         controller: "SearchController",
@@ -22,7 +22,7 @@ savorIt.config([
          controller: "RandomController"
       })
       .otherwise({
-        redirectTo: "/",
+        redirectTo: "/home",
       });
   },
 ]);
