@@ -28,21 +28,3 @@ savorIt.config([
 ]);
 
 
-
-savorIt.controller("HomeController", [
-  "$scope",
-  function ($scope) {
-    $scope.message = "hello from the controller";
-  },
-]);
-
-savorIt.controller("SearchController",["$scope", function($scope){
-
-}])
-savorIt.controller("CategoriesController",["$scope", function($scope){
-
-}])
-savorIt.controller("RandomController",["$scope", function($scope){
-
-}])
-
