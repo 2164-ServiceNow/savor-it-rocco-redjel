@@ -1,1 +1,11 @@
 <h1>{{message}}</h1>
+
+<form ng-submit="search()">
+  <label for="">search by name</label><br />
+  <input type="text" ng-model="searchValue">
+  <button>submit</button>
+</form>
+
+<div ng-repeat="food in foods"> 
+  <img ng-src="{{ food.strMealThumb }}" class="card-img-top" alt="{{ food.strMeal }}">
+</div>
