@@ -3,7 +3,7 @@ angular.module('savorIt', [
   'home',
   'search',
   'categories',
-  'random',
+  'random'
 ]).config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when("/home", {
