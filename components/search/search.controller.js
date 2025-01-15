@@ -12,7 +12,6 @@ angular
     $scope.foods = [];
 
     $scope.init = function(){
-      console.log("init function called")
       const areasPromise = SearchService.getAreas();
       areasPromise
         .then(function(response){

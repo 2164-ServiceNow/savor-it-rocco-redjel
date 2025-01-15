@@ -4,7 +4,6 @@ angular.module("search").service("SearchService", [
     const baseUrl = 'https://www.themealdb.com/api/json/v1/1';
 
     this.searchByName = function (name) {
-      console.log("get by name called")
      return $http.get(`${baseUrl}/search.php?s=${name}`);
     };
 
@@ -13,7 +12,6 @@ angular.module("search").service("SearchService", [
     };
 
     this.getByArea = function (area) {
-      console.log("get by area called")
       return $http.get(`${baseUrl}/filter.php?a=${area}`);
     };
   }
