@@ -3,8 +3,9 @@ angular
 .controller(
   "SearchController", [
   "$scope",
-  "SearchService",
-  function ($scope, SearchService) {
+  "RecipeService",
+  "AreaService",
+  function ($scope, RecipeService, AreaService) {
     $scope.searchValue = '';
     $scope.selectedArea = '';
     $scope.errorMessage = '';
@@ -12,7 +13,7 @@ angular
     $scope.foods = [];
 
     $scope.init = function(){
-      const areasPromise = SearchService.getAreas();
+      const areasPromise = AreaService.getAreas();
       areasPromise
         .then(function(response){
           if(response.data.meals){
@@ -36,8 +37,8 @@ angular
       }
 
       const searchPromise = $scope.searchValue ? 
-         SearchService.searchByName($scope.searchValue) :
-         SearchService.getByArea($scope.selectedArea);
+         RecipeService.getByName($scope.searchValue) :
+         RecipeService.getByArea($scope.selectedArea);
       searchPromise
         .then(function (response) {
           if (response.data.meals) {

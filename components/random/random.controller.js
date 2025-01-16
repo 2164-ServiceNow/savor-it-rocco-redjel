@@ -1,7 +1,7 @@
 angular.module("random", []).controller("RandomController", [
   "$scope",
-  "RandomService",
-  function ($scope, RandomService) {
+  "RecipeService",
+  function ($scope, RecipeService) {
     $scope.errorMessage = "";
     $scope.recipe = null;
     $scope.ingredients = [];
@@ -11,7 +11,7 @@ angular.module("random", []).controller("RandomController", [
       $scope.errorMessage = "";
       $scope.recipe = null;
       $scope.ingredients = [];
-      const randomPromise = RandomService.searchRandom();
+      const randomPromise = RecipeService.getRandom();
       randomPromise
         .then(function (response) {
           const data = response.data.meals[0];

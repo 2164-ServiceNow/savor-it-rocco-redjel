@@ -1,5 +1,6 @@
 angular.module('savorIt', [
   'ngRoute',
+  'service',
   'home',
   'search',
   'categories',
