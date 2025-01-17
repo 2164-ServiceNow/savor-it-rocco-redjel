@@ -32,6 +32,19 @@ angular.module("categories", []).controller("CategoriesController", [
           $scope.errorMessage = "Error fetching the recipes for that category";
         });
     };
+    $scope.viewRecipeDetails = function(strMeal){
+      console.log('View Recipe Details : ', strMeal);
+      $scope.selectedRecipe = null;
+      const recipePromise = RecipeService.getByName(strMeal);
+      recipePromise
+        .then(function(response){
+          $scope.selectedRecipe = response.data.meals[0];
+          console.log('prmise resule : ', $scope.selectedRecipe)
+        })
+        .catch(function(response){
+
+        });
+    }
     $scope.init();
   },
 ]);

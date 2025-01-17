@@ -3,32 +3,23 @@ angular.module("random", []).controller("RandomController", [
   "RecipeService",
   function ($scope, RecipeService) {
     $scope.errorMessage = "";
-    $scope.recipe = null;
-    $scope.ingredients = [];
     $scope.loading = false;
+    $scope.recipeName = "";
     $scope.randomSearch = function () {
       $scope.loading = true;
       $scope.errorMessage = "";
-      $scope.recipe = null;
-      $scope.ingredients = [];
       const randomPromise = RecipeService.getRandom();
+      console.log('promise result: ', randomPromise)
       randomPromise
         .then(function (response) {
+          console.log('response : ', response)
           const data = response.data.meals[0];
-          $scope.recipe = data;
-          $scope.ingredients = [];
-          for (let i = 1; i < 20; i++) {
-            let ingredientPropName = `strIngredient${i}`;
-            let measurePropName = `strMeasure${i}`;
-            let ingredient = data[ingredientPropName];
-            let measure = data[measurePropName];
-            if (ingredient && ingredient.trim() !== "") {
-              let instructionString = `${measure} ${ingredient}`.trim();
-              $scope.ingredients.push(instructionString);
-            }
-          }
+          console.log('data', data)
+          $scope.recipeName = data.strMeal;
+          console.log('random : ', $scope.recipeName);
         })
         .catch(function () {
+          console.log('error eccured when trying to retrive promise')
           $scope.errorMessage = "A random recipe could not be retrieved";
         })
         .finally(function () {
