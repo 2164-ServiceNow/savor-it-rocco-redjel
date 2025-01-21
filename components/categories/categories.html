@@ -1,9 +1,7 @@
-<div>{{catMessage}}</div>
-
 <div class="contaier mt-4">
   <h1 class=" text-center"> Explore Categories</h1>
   <p class=" text-center"> Discover recipes grouped by category</p>
-  <div class="row">
+  <div ng-if="!selectedCategory" class="row">
     <div class="col-md-4 mb-4" ng-repeat="category in categories">
       <div class="card d-flex flex-column h-100">
         <img ng-src="{{category.strCategoryThumb}}" class="card-img-top" alt="{{category.strCategory}}">
@@ -20,7 +18,9 @@
     </div>
   </div>
 
-  <div ng-if="selectedCategory" class="mt-5">
+  <div style="position: relative; " ng-if="selectedCategory && !recipeName" class="m-5">
+    <button ng-click="removeSelectedCategory()" class="btn btn-primary"
+      style="position: absolute; left:20px; top:20;">go back</button>
     <h2 class="mb-3 text-center"> {{selectedCategory}} Recipes </h2>
     <div class="row">
       <div class="col-md-4 mb-3" ng-repeat="recipe in recipes">
@@ -39,7 +39,8 @@
       </div>
     </div>
   </div>
-  <<!-- div class="mt-5">
-    <recipe></recipe>
-  </div> -->
+  <div class="m-5">
+    <button ng-if="recipeName" class="btn btn-primary mb-2" ng-click="removeSelectedCategory()">go back</button>
+    <recipe recipe-name="recipeName"></recipe>
+  </div>
 </div>

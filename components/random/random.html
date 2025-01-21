@@ -7,8 +7,11 @@
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
-  <recipe recipe-name="recipeName"></recipe>
-  <div class="text-center">
-    <button class="btn btn-primary" ng-click="randomSearch()">New Random Meal </button>
+  <div ng-hide="loading">
+    <recipe recipe-name="recipeName"></recipe>
+    <div class="text-center">
+      <button class="btn btn-primary" ng-click="randomSearch()">New Random Meal </button>
+    </div>
   </div>
+  
 </div>
