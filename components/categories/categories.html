@@ -30,11 +30,16 @@
             <h5 class="card-title text-center">{{recipe.strMeal}}</h5>
             <div class="d-flex justify-content-center">
 
-              <a class="btn btn-secondary" href="">View Details</a>
+              <button class="btn btn-primary" ng-click="viewRecipeDetails(recipe.strMeal)">
+                View Recipe Details
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <<!-- div class="mt-5">
+    <recipe></recipe>
+  </div> -->
 </div>

@@ -7,28 +7,7 @@
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
-
-  <div ng-if="recipe" class="card ">
-    <div class="d-flex justify-content-center ">
-      <img ng-src="{{recipe.strMealThumb}}" class="card-img-top w-50 h-25 " alt="{{recipe.strMeal}}">
-    </div>
-
-    <div class="card-body">
-      <h2 class="card-title text-center">{{recipe.strMeal}}</h2>
-      <p class="card-text ">
-        <strong>Category:</strong>
-        {{recipe.strCategory}} <br />
-        <strong>Area:</strong>
-        {{recipe.strArea}}
-      </p>
-      <h4>Ingredients: </h4>
-      <ul>
-        <li ng-repeat="ingredient in ingredients">{{ingredient}}</li>
-      </ul>
-      <h4>Instructions</h4>
-      <p>{{recipe.strInstructions}}</p>
-    </div>
-  </div>
+  <recipe recipe-name="recipeName"></recipe>
   <div class="text-center">
     <button class="btn btn-primary" ng-click="randomSearch()">New Random Meal </button>
   </div>
