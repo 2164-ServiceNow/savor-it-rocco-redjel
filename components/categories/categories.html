@@ -1,4 +1,4 @@
-<div class="contaier mt-4">
+<div class="contaier m-4">
   <h1 class=" text-center"> Explore Categories</h1>
   <p class=" text-center"> Discover recipes grouped by category</p>
   <div ng-if="!selectedCategory" class="row">
@@ -7,7 +7,7 @@
         <img ng-src="{{category.strCategoryThumb}}" class="card-img-top" alt="{{category.strCategory}}">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{category.strCategory}}</h5>
-          <p class="card-text flex-grow-1">{{category.strCategoryDescription | limitTo:200 }}...</p>
+          <p class="card-text flex-grow-1">{{category.strCategoryDescription | limitTo:200 }} <span ng-show='category.strCategoryDescription.length > 200'>...</span></p>
           <div class="d-flex justify-content-center mt-auto">
             <button class="btn btn-primary" ng-click="viewMeals(category.strCategory)">
               View Recipes

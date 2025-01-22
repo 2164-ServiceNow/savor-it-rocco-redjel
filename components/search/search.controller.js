@@ -36,15 +36,29 @@ angular
         return;
       }
 
-      const searchPromise = $scope.searchValue ? 
-         RecipeService.getByName($scope.searchValue) :
-         RecipeService.getByArea($scope.selectedArea);
+      const searchPromise = 
+        $scope.searchValue ? 
+          $scope.searchValue.length == 1 ? 
+            RecipeService.getByFirstLetter($scope.searchValue) :
+            RecipeService.getByName($scope.searchValue) :
+            RecipeService.getByArea($scope.selectedArea);
+
       searchPromise
         .then(function (response) {
-          if (response.data.meals) {
-            $scope.foods = response.data.meals;
+          let recipes = response.data.meals;
+          if (recipes) {
+            let filteredRecipes = [];
+            if($scope.selectedArea && $scope.searchValue){
+              for(let recipe of recipes){
+                if(recipe.strArea === $scope.selectedArea)
+                  filteredRecipes.push(recipe);
+              }
+              $scope.foods = filteredRecipes;
+            }else{
+              $scope.foods = recipes;
+            }
           } else {
-            $scope.errorMessage = "No food found.";
+            $scope.errorMessage = "No recipes found.";
           }
         })
         .catch(function () {
