@@ -4,7 +4,8 @@
     <form ng-submit="search()">
         <div class="row mb-3">
             <div class="col-md-6">
-                <input class="form-control" type="text" ng-model="searchValue" placeholder="Search by name or first letter">
+                <input class="form-control" type="text" ng-model="searchValue"
+                    placeholder="Search by name or first letter">
             </div>
             <div class="col-md-4">
                 <select class="form-select" ng-model="selectedArea" ng-options="area for area in areas">
@@ -16,20 +17,8 @@
             </div>
         </div>
     </form>
-
     <div ng-if="errorMessage" class="alert alert-danger text-center">
         {{errorMessage}}
     </div>
-
-    <div class="row" ng-if="foods && foods.length > 0">
-        <div class="col-md-4 mb-3" ng-repeat="food in foods"> 
-            <div class="card h-100">
-                <img ng-src="{{ food.strMealThumb }}" class="card-img-top" alt="{{ food.strMeal }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{food.strMeal}}</h5>
-                    <a class="btn btn primary" href="">View Details</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <recipes recipes="recipes"> </recipes>
 </div>
