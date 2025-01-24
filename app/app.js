@@ -6,7 +6,8 @@ angular.module('savorIt', [
   'search',
   'categories',
   'random',
-  'recipes'
+  'recipes',
+  'ingredient'
 ]).config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when("/home", {
@@ -24,6 +25,10 @@ angular.module('savorIt', [
       .when("/random",{
         templateUrl: "./components/random/random.html",
          controller: "RandomController"
+      })
+      .when("/ingredient",{
+        templateUrl: "./components/ingredient/ingredient.html",
+         controller: "IngredientController"
       })
       .otherwise({
         redirectTo: "/home",
