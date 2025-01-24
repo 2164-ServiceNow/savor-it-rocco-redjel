@@ -3,16 +3,20 @@
     <p class="text-center">Find delicious recipes by name or explore recipes from different regions!</p>
     <form ng-submit="search()">
         <div class="row mb-3">
-            <div class="col-md-6">
-                <input class="form-control" type="text" ng-model="searchValue"
+            <div class="col-md-3">
+                <input class="form-control" type="text" ng-model="nameValue"
                     placeholder="Search by name or first letter">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
+                <input class="form-control" type="text" ng-model="ingredientValue"
+                    placeholder="Search by ingredient">
+            </div>
+            <div class="col-md-3">
                 <select class="form-select" ng-model="selectedArea" ng-options="area for area in areas">
                     <option value="">Search by area (Optional)</option>
                 </select>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <button class="btn btn-primary w-100">Search</button>
             </div>
         </div>

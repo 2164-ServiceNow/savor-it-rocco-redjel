@@ -31,6 +31,10 @@ angular.module("service")
        this.getByCategory = function(category){
         return $http.get(`${baseUrl}/filter.php?c=${category}`);
        };
+
+       this.getAllRecipes = function(){
+        return $http.get(`${baseUrl}/search.php?s=`)
+       }
     }
   ]);
   

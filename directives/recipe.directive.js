@@ -20,7 +20,7 @@ angular.module("recipe", []).directive("recipe", [
                 const recipe = response.data.meals[0];
                 $scope.recipe = recipe;
                 $scope.ingredients =
-                  IngredientService.getIngredientsOfRecipe(recipe);
+                  IngredientService.getRecipeIngredientsWithMeasures(recipe);
               })
               .catch(function () {
                 $scope.errorMessage = "A recipe could not be retrieved";

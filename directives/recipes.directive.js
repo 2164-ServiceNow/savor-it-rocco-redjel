@@ -19,12 +19,9 @@ angular.module("recipes", []).directive("recipes", [
             .then(function (response) {
               $scope.recipeName = response.data.meals[0].strMeal;
             })
-            .catch(function (response) {
+            .catch(function () {
               console.error("an error occured");
             });
-        };
-        $scope.clearRecipeDetails = function () {
-          $scope.recipeName = "";
         };
       },
     };
