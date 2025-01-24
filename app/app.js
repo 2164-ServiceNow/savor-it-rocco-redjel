@@ -2,7 +2,6 @@ angular.module('savorIt', [
   'ngRoute',
   'service',
   'recipe',
-  'home',
   'search',
   'categories',
   'random',
@@ -12,7 +11,6 @@ angular.module('savorIt', [
     $routeProvider
       .when("/home", {
         templateUrl: "./components/home/home.html",
-        controller: "HomeController",
       })
       .when("/search", {
         templateUrl: "./components/search/search.html",
