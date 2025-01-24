@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="container">
+    <h1 class="text-center">Search Ingredients</h1>
+    <p class="text-center">Get details about an ingredient!</p>
+    <form ng-submit="search()">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <input class="form-control" ng-model="searchInput" type="text">
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </form>
+    <div class="alert alert-danger text-center" ng-if="errorMessage">
+      {{errorMessage}}
+    </div>
+  </div>
+  <div class="card" ng-if="ingredient">
+    <div class="d-flex justify-content-center">
+      <!-- <img class="card-img-top w-50 h-25" ng-src="imageSrc" alt="ingredient.strIngredient"> -->
+    </div>
+    <div class="card-body">
+      <h2 class="card-title text-center">{{ingredient.strIngredient}}</h2>
+      <div class="card-text ">
+        <h4>Description</h4>
+        <p> {{ingredient.strDescription}}</p>
+      </div>
+    </div>
+  </div>
+</div>
