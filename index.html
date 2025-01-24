@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="savorIt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SavorIt - Discover Delicious Recipes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <base href="/">
+</head>
+
+<body>
+<my-header></my-header>
+<div ng-view></div>
+<my-footer></my-footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+  <script src="services/services.module.js"></script>
+  <script src="services/area.service.js"></script>
+  <script src="services/category.service.js"></script>
+  <script src="services/ingredient.service.js"></script>
+  <script src="services/recipe.service.js"></script>
+  <script src="directives/recipe.directive.js"></script>
+  <script src="directives/recipes.directive.js"></script>
+  <script src="app/app.js"></script>
+  <script src="components/categories/categories.controller.js"></script>
+  <script src="components/search/search.controller.js"></script>
+  <script src="components/random/random.controller.js"></script>
+  <script src="components/ingredient/ingredient.controller.js"></script>
+</body>
+
+</html>
