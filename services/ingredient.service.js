@@ -7,7 +7,7 @@ angular.module("service").service("IngredientService", [
         return $http.get(`${baseUrl}/list.php?i=list`);
       };
 
-      this.getIngredientsOfRecipe = function(recipe){
+      this.getRecipeIngredientsWithMeasures = function(recipe){
         const ingredients = [];
 
           for (let i = 1; i < 20; i++) {
@@ -18,6 +18,21 @@ angular.module("service").service("IngredientService", [
             if (ingredient && ingredient.trim() !== "") {
               let instructionString = `${measure} ${ingredient}`.trim();
               ingredients.push(instructionString);
+            }
+          }
+
+        return ingredients;
+      }
+
+
+      this.getRecipeIngredients = function(recipe){
+        const ingredients = [];
+
+          for (let i = 1; i < 20; i++) {
+            let ingredientPropName = `strIngredient${i}`;
+            let ingredient = recipe[ingredientPropName];
+            if (ingredient && ingredient.trim() !== "") {
+              ingredients.push(ingredient.trim());
             }
           }
 

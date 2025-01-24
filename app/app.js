@@ -5,7 +5,8 @@ angular.module('savorIt', [
   'home',
   'search',
   'categories',
-  'random'
+  'random',
+  'recipes'
 ]).config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when("/home", {
